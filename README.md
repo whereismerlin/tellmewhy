@@ -1,1 +1,1 @@
-# tellmewhy
+#pip install openai, spacy, TextBlob, translate
