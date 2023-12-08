@@ -36,7 +36,7 @@ def main():
     summarization_mode = False
 
     while True:
-        user_input = input("You: ")
+        user_input = input("คุณ: ")
 
         if user_input.lower() in ['bye']:
             print("Bye!")
