@@ -4,9 +4,14 @@ import streamlit as st
 from textblob import TextBlob
 from translate import translate
 
+user_api_key = st.sidebar.text_input("OpenAI API key", type="password")
+client = openai.OpenAI(api_key=user_api_key)
+
+st.title('Tell Me Why')
+st.markdown('Ask me anything and I will try to answer it.')
+user_input = st.text_area("Your text here")
+
 def chat_with_me(prompt, context):
-    user_api_key = st.sidebar.text_input("OpenAI API key", type="password")
-    client = openai.OpenAI(api_key=user_api_key)
     response = openai.Completion.create(
         engine="text-davinci-003",
         prompt=prompt,
