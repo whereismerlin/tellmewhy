@@ -1,10 +1,12 @@
 import openai
 import spacy
+import streamlit as st
 from textblob import TextBlob
 from translate import translate
 
 def chat_with_me(prompt, context):
-    openai.api_key = 'YOUR_API_KEY'
+    user_api_key = st.sidebar.text_input("OpenAI API key", type="password")
+    client = openai.OpenAI(api_key=user_api_key)
     response = openai.Completion.create(
         engine="text-davinci-003",
         prompt=prompt,
