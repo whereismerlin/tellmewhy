@@ -12,8 +12,8 @@ st.markdown('Ask me anything and I will try to answer it.')
 user_input = st.text_area("Your text here")
 
 def chat_with_me(prompt, context):
-    response = openai.Completion.create(
-        engine="text-davinci-003",
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
         prompt=prompt,
         max_tokens=150,
         temperature=0.7,
