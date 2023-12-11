@@ -1,1 +1,1 @@
-#pip install openai, spacy, TextBlob, translate
+#pip install openai, spacy, TextBlob, translate, streamlit
